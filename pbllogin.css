@@ -1,0 +1,255 @@
+body{
+    background-color :rgb(208, 201, 214); 
+    border:rgb(0, 0, 0);
+    border-end-end-radius: 200px;
+
+
+
+
+
+}
+
+input{
+    color:rgb(0, 0, 0);
+    border:none;
+    outline:none;
+    margin-left: 0px;
+    background:transparent;
+    border-bottom:2px solid  purple ;
+}
+
+
+
+.next{
+    
+    color :black;
+    background-color:rgba(92, 52, 158, 0.774);
+    border-color: black;
+    border-radius:10%;
+    text-align: left;
+    margin-left: 270px;
+    padding-left:20px;
+    padding-right:20px;
+    padding-bottom:0px;
+    padding-top:0%;
+    
+
+}
+
+
+.div1{
+    border-radius:300px;
+    border-color:beige;
+
+}
+#box1{
+    border-color:aliceblue;
+}
+
+.form-name{
+    background-color:#fff;
+    text-align:left;
+    
+
+    width:100%;
+    max-width:750px;
+    padding:20px;
+    border-radius:10px;
+    border:none solid #673ab7;
+    box-shadow:0 2px 4px 8px 15px rgba(0,0,0,0.1);
+
+}
+
+
+.form-email{
+    background-color:#fff;
+     text-align:left;
+
+    width:100%;
+    max-width:750px;
+    padding:20px;
+    border-radius:10px;
+    border:none solid #673ab7;
+    box-shadow:0 2px 4px 8px 15px rgba(0,0,0,0.1);
+
+}
+
+
+.form-course{
+    background-color:#fff;
+     text-align:left;
+
+    width:100%;
+    max-width:750px;
+    padding:20px;
+    border-radius:10px;
+    border:none solid #673ab7;
+    box-shadow:0 2px 4px 8px 15px rgba(0,0,0,0.1);
+
+}
+.form-degre{
+    background-color:#fff;
+     text-align:left;
+
+    width:100%;
+    max-width:750px;
+    padding:20px;
+    border-radius:10px;
+    border:none solid #673ab7;
+    box-shadow:0 2px 4px 8px 15px rgba(0,0,0,0.1);
+
+}
+
+.form-year{
+    background-color:#fff;
+     text-align:left;
+
+    width:100%;
+    max-width:750px;
+    padding:20px;
+    border-radius:10px;
+    border:none solid #673ab7;
+    box-shadow:0 2px 4px 8px 15px rgba(0,0,0,0.1);
+
+}
+
+.class-roll{
+    background-color:#fff;
+     text-align:left;
+
+    width:100%;
+    max-width:750px;
+    padding:20px;
+    border-radius:10px;
+    border:none solid #673ab7;
+    box-shadow:0 2px 4px 8px 15px rgba(0,0,0,0.1);
+
+}
+
+
+.universityrollno{
+    background-color:#fff;
+     text-align:left;
+     width:100%;
+    max-width:750px;
+    padding:20px;
+    border-radius:10px;
+    border:none solid #673ab7;
+    box-shadow:0 2px 4px 8px 15px rgba(0,0,0,0.1);
+
+}
+
+
+.dropdown{
+    width:200px;
+    height:50px;
+    padding:2px;
+    border:1px solid black;
+    border-radius:10%;
+    margin-left:60px;
+
+}
+.form-sec{
+    background-color:#fff;
+     text-align:left;
+
+    width:100%;
+    max-width:750px;
+    padding:20px;
+    border-radius:10px;
+    border:none solid #673ab7;
+    box-shadow:0 2px 4px 8px 15px rgba(0,0,0,0.1);
+
+}
+
+.dropdown1{
+    width:200px;
+    height:50px;
+    padding:2px;
+    border:1px solid black;
+    border-radius:10%;
+    margin-left:70px;
+
+}
+
+.dropdown2{
+    width:200px;
+    height:50px;
+    padding:2px;
+    border:1px solid black;
+    border-radius:10%;
+    margin-left:40px;
+
+}
+
+.user-id{
+    background-color:#fff;
+    text-align:center;
+    width:100%;
+
+    max-width:200px;
+    padding:20px;
+    border-radius:10px;
+    border:none solid #673ab7;
+    box-shadow:0 2px 4px 8px 15px rgba(0,0,0,0.1);
+
+}
+.password{
+    background-color:#fff;
+    text-align:center;
+     width:100%;
+    max-width:145px;
+    padding:20px;
+    border-radius:10px;
+    border:none solid #673ab7;
+    box-shadow:0 2px 4px 8px 15px rgba(0,0,0,0.1);
+
+}
+
+.login{
+    
+    color :black;
+    background-color:rgba(92, 52, 158, 0.774);
+    border-color: black;
+    border-radius:10%;
+    text-align: center;
+    margin-left: 0px;
+    padding-left:20px;
+    padding-right:20px;
+    padding-bottom:0px;
+    padding-top:0%;
+    
+
+}
+
+
+.marks{
+    background-color:#fff;
+     text-align:center;
+
+    width:100%;
+    max-width:900px;
+    padding:20px;
+    border-radius:10px;
+    border:none solid #673ab7;
+    box-shadow:0 2px 4px 8px 15px rgba(0,0,0,0.1);
+
+}
+
+.last{
+    
+    color :black;
+    background-color:rgba(92, 52, 158, 0.774);
+    border-color: black;
+    border-radius:10%;
+    text-align: center;
+    margin-left: 0px;
+    padding-left:20px;
+    padding-right:20px;
+    padding-bottom:10px;
+    padding-top:10px;
+    
+
+}
+
+

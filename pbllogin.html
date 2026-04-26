@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>  </title>
+    <link rel="stylesheet" href="pbllogin.css" >
+    <meta name="viewport"  content="width=device-width,intial-scale=1.0">
+    
+</head>
+<body>
+    <center>
+    <form>
+    
+    <p><h3> <div1 style="width:40px; padding:10px;">THIS FORM INCLUDES YOUR DETAILS </div1></h3></p> 
+    <hr> 
+<P> <div3 style=" width:40px; padding:10px;">FILL YOUR DETAILS</div3    ></P>
+<br>
+<div class="form-name">  <p><b>NAME</b>
+     <br><br><input  id="name" type="text" pattern="[A-Za-z ]+" required  placeholder=""></p></div>
+<br>
+
+<div class="universityrollno"  <p><b>UNIVERSITY ROLL NO.</b>
+    <br><br><input id="universityrollno" type="text" placeholder=""></p></div>
+    <br>
+
+    <div class="class-roll">  <p><b>SEC ROLL NO.</b>
+     <br><br><input  id="class roll" type="text" placeholder=""></p></div>
+<br>
+
+
+
+
+    <div class="form-degre">
+<p><b>DEGREE</b><select class="dropdown2" name="degre" id="degre" onchange="showcourser()" >
+     <option value="">select</option>
+    <option value="Graduation">Graduation
+    <option value="Post Graduation"> Post Graduation </option>
+     </select></p></div>
+<br>
+
+
+<div class="form-course">
+<p><b>COURSE</b><select class="dropdown2" name="course" id="course" onchange="subject()">
+    <option value="">select</option>
+   
+</select>
+
+
+      <script>
+        function showcourser(){
+            let degre =
+            document.getElementById("degre").value;
+            let course =
+            document.getElementById("course");
+
+            course.innerHTML ="<option value=''> select course</option>";
+
+
+            if( degre ==="Graduation"){
+                let  gradcourses =["B.TECH","BCA","BBA","BSC","BHM","MBBS"];
+
+                for(let i=0;i<gradcourses.length;i++){
+                    let option =
+                    document.createElement("option");
+                    option.text =gradcourses[i];
+                    course.add(option);}
+
+                }
+            
+            else if( degre ==="Post Graduation"){
+                let pgcourses =["M.TECH","MCA","MBA","MSC","MHM"];
+
+                for(let i=0;i<pgcourses.length;i++){
+                    let option =
+                    document.createElement("option");
+                    option.text =pgcourses[i];
+                    course.add(option);}
+                
+                }
+        
+        }
+    
+
+
+  
+      </script>
+    
+    
+    </select></p></div>
+    <br>
+  
+
+<div class="form-sec">
+<p> <b>SEC </b><select class="dropdown1" name="sec" id="sec" >
+      <option value="">select</option>
+    <option value="a">A</option>
+    <option value="b">B</option>
+    <option value="c">C</option>
+    <option value="d">D</option>
+    <option value="e">E</option>
+    <option value="f">F</option>
+    <option value="g">G</option>
+    <option value="h">H</option>
+    <option value="i">I</option>
+    <option value="j">J</option>
+    <option value="k">K</option>
+    <option value="l">L</option>
+    <option value="m">M</option>
+    <option value="n">N</option>
+    <option value="o">O</option>
+    <option value="p">P</option>
+    <option value="q">Q</option>
+    <option value="r">R</option>
+    <option value="s">S</option>
+    <option value="t">T</option>
+    <option value="u">U</option>
+    <option value="v">V</option>
+    <option value="w">W</option>
+    <option value="x">X</option>
+    <option value="y">Y</option>
+    <option value="z">Z</option>
+    </select></p></div>
+    <br>
+
+    
+<div class="form-year"> 
+<p><b>YEAR</b> <select class="dropdown" name="year" id="year">
+      <option value="">select</option>
+    <option value="1">1st</option>
+    <option value="2">2nd</option>
+    <option value="3">3rd</option>
+    <option value="4">4th</option>
+</select></p></div>
+<br>
+
+</center>
+<br>
+
+<button  type="button"  
+onclick="goNext()" class="next"  style="width:100px;  height:50px;"><p5> <h4>NEXT</h4></p5> </div2></button>
+
+<script>
+function goNext() {
+    let course = document.getElementById("course").value;
+
+    if(course === "") {
+        alert("Select course");
+        return;
+    }
+
+    localStorage.setItem("course", course);
+
+    window.location.href = "subject.html";}
+    </script>
+
+<br>
+<br>
+<hr>
+
+<center><p> this file include copyright inc @akhil ashish aayush 
+
+</p></center>
+<hr>
+  </form>
+</body>
+</html>
