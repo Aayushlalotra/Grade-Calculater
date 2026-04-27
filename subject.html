@@ -1,16 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
   <meta name="viewport"  content="width=device-width,intial-scale=1.0">
    <link rel="stylesheet" href="pbllogin.css" >
     <title>subjects  marks details</title>
 </head>
 <body>
+    
 <center>
 <p><h3> <div1 style="width:40px; padding:10px;">ENTER MARKS OF SUBJECTS</div1></h3></p> 
     <hr> 
-<div  class="marks">
-    <form id="subjectForm"></form>
+<div  class="marks" required>
+    <form id="subjectForm"
+    onsubmit="return goNext()"
+    action="display.html"></form>
 <script>
 
     window.onload=function(){
@@ -86,13 +90,13 @@ subjects.forEach(sub => {
    html += `
     <tr>
         <td>${sub}</td>
-        <td><input type="number" class="marks" style="width:90%"; padding:8px; required></td>
+        <td><input type="number" min="0" max="100" step="1" class="marks" style="width:90%"; padding:8px; required></td>
     </tr>
     `;
 });
 
 html += `</table><br>
-<button type="button" onclick="goNext()" class="last" onclick="calculate()">Submit</button>`;
+<button type="submit"  class="last" onclick="calculate()">Submit</button>`;
 form.innerHTML = html;}
 </script>
 
@@ -106,5 +110,6 @@ form.innerHTML = html;}
 </p></div>
     <br>
     </center>
+    
 </body>
 </html>

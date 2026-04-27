@@ -8,7 +8,8 @@
 </head>
 <body>
       <center>
-    <form>
+    <form action="userid.html"
+    onsubmit="return checkPass()">
     
     <p><h3> <div1 style="width:40px; padding:10px;">REGISTRATION PAGE</div1></h3></p> 
     <hr> 
@@ -18,23 +19,32 @@
     <br>
     <br>
 <div class="user-id"> <b>Enter id<p><b> </b>
-    <input id="user" type="text" placeholder="" ></p>
+    <input id="user" type="text" placeholder=""  required></p>
 <br>
 <div class="password"<p><b> Enter Password</b>
-    <br><br><input id="password" type="text" placeholder=""></p></div>
+    <br><br><input id="password" type="text" placeholder="" required></p></div>
     <br>
 <div class="password"<p><b> verify Password</b>
-    <br><br><input id="password" type="password" placeholder=""></p></div>
+    <br><br><input id="password2" type="password" placeholder="" required></p></div>
     <br>
-    <button onclick="goNext()"  type="button" class="login" 
+  
+    <button type="submit" class="login" 
      style="width:100px;  height:50px;"><p5> <h4>Login</h4></p5>
      </div2></button>
-     <script>
-        function goNext(){
 
-window.location.href="userid.html";}
-</script>
 <br>
+<script>
+function checkPass(){
+ let p1 = document.getElementById("password").value;
+ let p2 = document.getElementById("password2").value;
+
+ if(p1 != p2){
+   alert("Passwords do not match");
+   return false;
+ }
+ return true;
+}
+</script>
 </form>
 
 </center>
