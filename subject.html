@@ -96,20 +96,49 @@ subjects.forEach(sub => {
 });
 
 html += `</table><br>
-<button type="submit"  class="last" onclick="calculate()">Submit</button>`;
+<button type="button"  class="last" onclick="resultPage()">Submit</button>`;
 form.innerHTML = html;}
+
 </script>
 
 <script>
-    function goNext(){
-        window.location.href="display.html";}
-    
+
+
+function resultPage(){
+
+let inputs = document.querySelectorAll("input[type='number']");
+let total = 0;
+
+
+for(let i=0; i<inputs.length; i++){
+
+   if(inputs[i].value == ""){
+      alert("Please enter all marks");
+      return;
+   }
+
+   if(inputs[i].value < 0 || inputs[i].value > 100){
+      alert("Marks must be between 0 to 100");
+      return;
+   }
+
+   total += Number(inputs[i].value);
+
+}
+
+
+localStorage.setItem("total", total);
+localStorage.setItem("count", inputs.length);
+
+window.location.href="display.html";
+}
 </script>
 
 </div>
 </p></div>
     <br>
     </center>
-    
+
+
 </body>
 </html>

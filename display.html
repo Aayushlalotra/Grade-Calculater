@@ -1,21 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Display</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Result</title>
+
+<style>
+body{
+    font-family: Arial;
+    background:#d9ddff;
+}
+
+.box{
+    width:60%;
+    margin:auto;
+    margin-top:50px;
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0px 0px 10px gray;
+}
+
+h1{
+    text-align:center;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:20px;
+}
+
+td,th{
+    border:1px solid black;
+    padding:10px;
+    text-align:center;
+}
+
+.pass{
+    color:green;
+    font-size:25px;
+}
+
+.fail{
+    color:red;
+    font-size:25px;
+}
+</style>
+
 </head>
-<form><center>
 <body>
-    <br>
-    <p><b> GIVEN GRADE </b></p>
-    <hr>
-    <table> <tr style="border:2px; padding:10px;">YOU ARE FAIL <hr></tr>
 
-    </table>
+<div class="box">
 
+<h1>STUDENT RESULT</h1>
 
+<table>
+<tr>
+<th>Total Marks</th>
+<th>Percentage</th>
+<th>Grade</th>
+<th>Status</th>
+</tr>
 
- </center>   </form>
+<tr>
+<td id="total"></td>
+<td id="per"></td>
+<td id="grade"></td>
+<td id="status"></td>
+</tr>
+</table>
+
+</div>
+<script>
+let total = Number(localStorage.getItem("total")) || 0;
+let count = Number(localStorage.getItem("count")) || 1;
+
+let per = total / count;
+
+let grade = "";
+let status = "";
+
+if(per >= 90){
+ grade="A+";
+ status="PASS";
+}
+else if(per >= 75){
+ grade="A";
+ status="PASS";
+}
+else if(per >= 60){
+ grade="B";
+ status="PASS";
+}
+else if(per >= 40){
+ grade="C";
+ status="PASS";
+}
+else{
+ grade="F";
+ status="FAIL";
+}
+
+document.getElementById("total").innerHTML = total;
+document.getElementById("per").innerHTML = per.toFixed(2)+"%";
+document.getElementById("grade").innerHTML = grade;
+
+if(status=="PASS"){
+ document.getElementById("status").innerHTML =
+ "<span class='pass'>PASS</span>";
+}
+else{
+ document.getElementById("status").innerHTML =
+ "<span class='fail'>FAIL</span>";
+}
+</script>
+
 </body>
 </html>
