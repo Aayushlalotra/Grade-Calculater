@@ -72,49 +72,40 @@ td,th{
 </table>
 
 </div>
+
+<script src="grade.js"></script>
+
 <script>
-let total = Number(localStorage.getItem("total")) || 0;
-let count = Number(localStorage.getItem("count")) || 1;
+Module.onRuntimeInitialized = function () {
 
-let per = total / count;
+let total = Number(localStorage.getItem("total"));
+let count = Number(localStorage.getItem("count"));
 
-let grade = "";
-let status = "";
+Module.ccall("calculate", null,
+["number","number"],
+[total,count]);
 
-if(per >= 85){
- grade="O";
- status="PASS";
-}
-else if(per >= 75){
- grade="A";
- status="PASS";
-}
-else if(per >= 60){
- grade="B";
- status="PASS";
-}
-else if(per >= 40){
- grade="C";
- status="PASS";
-}
-else{
- grade="F";
- status="FAIL";
-}
+let per = Module.ccall("getPercentage","number");
+let g = Module.ccall("getGrade","number");
+
+let grade = String.fromCharCode(g);
 
 document.getElementById("total").innerHTML = total;
-document.getElementById("per").innerHTML = per.toFixed(2)+"%";
+document.getElementById("per").innerHTML = per.toFixed(2) + "%";
 document.getElementById("grade").innerHTML = grade;
 
-if(status=="PASS"){
- document.getElementById("status").innerHTML =
- "<span class='pass'>PASS</span>";
+if(grade == "F"){
+document.getElementById("status").innerHTML =
+"<span class='fail'>FAIL</span>";
+}else{
+document.getElementById("status").innerHTML =
+"<span class='pass'>PASS</span>";
 }
-else{
- document.getElementById("status").innerHTML =
- "<span class='fail'>FAIL</span>";
-}
+
+};
 </script>
+
+
 
 </body>
 </html>
