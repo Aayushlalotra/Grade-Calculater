@@ -35,14 +35,27 @@
 <br>
 <script>
 function checkPass(){
- let p1 = document.getElementById("password").value;
- let p2 = document.getElementById("password2").value;
 
- if(p1 != p2){
+let user = document.getElementById("user").value;
+let p1 = document.getElementById("password").value;
+let p2 = document.getElementById("password2").value;
+
+if(p1 != p2){
    alert("Passwords do not match");
    return false;
- }
- return true;
+}
+
+let students = JSON.parse(localStorage.getItem("students")) || [];
+
+students.push({
+   user:user,
+   password:p1
+});
+
+localStorage.setItem("students", JSON.stringify(students));
+
+alert("Registered Successfully");
+return true;
 }
 </script>
 </form>

@@ -9,7 +9,8 @@
 </head>
 <body>
     <center>
-    <form action="pbllogin.html">
+    <form action="pbllogin.html"
+    onsubmit ="return loginUser()">
     
     <p><h3> <div1 style="width:40px; padding:10px;">USER VERIFICATION </div1></h3></p> 
     <hr> 
@@ -31,6 +32,27 @@
     
 <br>
 <p><a href="registeration.html" style="text-align:right"> new register</div> </p>
+
+    <script>
+function loginUser(){
+
+let user = document.getElementById("user").value;
+let pass = document.getElementById("password").value;
+
+let students = JSON.parse(localStorage.getItem("students")) || [];
+
+for(let i=0; i<students.length; i++){
+
+   if(students[i].user == user && students[i].password == pass){
+      window.location.href="pbllogin.html";
+      return false;
+   }
+}
+
+alert("Wrong ID or Password");
+return false;
+}
+</script>
 </form>
 
 </center></body>

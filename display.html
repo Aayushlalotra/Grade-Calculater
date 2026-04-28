@@ -74,12 +74,18 @@ td,th{
 </div>
 
 <script src="grade.js"></script>
-
 <script>
-Module.onRuntimeInitialized = function () {
+window.onload = function(){
 
-let total = Number(localStorage.getItem("total"));
-let count = Number(localStorage.getItem("count"));
+setTimeout(function(){
+
+let total = Number(localStorage.getItem("total")) || 0;
+let count = Number(localStorage.getItem("count")) || 1;
+
+if(total==0){
+alert("No marks found. Go from subject page.");
+return;
+}
 
 Module.ccall("calculate", null,
 ["number","number"],
@@ -88,21 +94,15 @@ Module.ccall("calculate", null,
 let per = Module.ccall("getPercentage","number");
 let g = Module.ccall("getGrade","number");
 
-let grade = String.fromCharCode(g);
-
 document.getElementById("total").innerHTML = total;
-document.getElementById("per").innerHTML = per.toFixed(2) + "%";
-document.getElementById("grade").innerHTML = grade;
+document.getElementById("per").innerHTML = per.toFixed(2)+"%";
+document.getElementById("grade").innerHTML = String.fromCharCode(g);
+document.getElementById("status").innerHTML =
+(String.fromCharCode(g)=="F")?"FAIL":"PASS";
 
-if(grade == "F"){
-document.getElementById("status").innerHTML =
-"<span class='fail'>FAIL</span>";
-}else{
-document.getElementById("status").innerHTML =
-"<span class='pass'>PASS</span>";
+},500);
+
 }
-
-};
 </script>
 
 
